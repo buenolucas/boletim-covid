@@ -357,7 +357,7 @@ const CreateCovidReport = () => {
           <Col span={12}>
             {current > 0 && (
               <Button
-                style={{ margin: "0 8px" }}
+                style={{ margin: "0 8px", fontFamily: "GothamBold" }}
                 onClick={() => prev()}
                 size="large"
               >
@@ -365,7 +365,10 @@ const CreateCovidReport = () => {
               </Button>
             )}
           </Col>
-          <Col span={12} style={{ textAlign: "right" }}>
+          <Col
+            span={12}
+            style={{ textAlign: "right", fontFamily: "GothamBold" }}
+          >
             {current === 0 && (
               <Button
                 type="primary"
@@ -381,7 +384,7 @@ const CreateCovidReport = () => {
               <Button
                 type="primary"
                 size="large"
-                style={{ margin: "0 8px" }}
+                style={{ margin: "0 8px", fontFamily: "GothamBold" }}
                 onClick={() => generate()}
               >
                 Finalizar

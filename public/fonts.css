@@ -1,0 +1,5 @@
+@font-face {
+  font-family: "GothamBold";
+  src: local("GothamBold"), url(/gotham-font/GothamBold.woff) format("woff"),
+    url(/gotham-font/GothamBold.ttf) format("truetype");
+}

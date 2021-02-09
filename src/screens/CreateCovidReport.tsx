@@ -38,23 +38,32 @@ const _fields = [
   // geral
   //
   {
-    x: 820,
+    x: 810,
     y: 193,
     weight: 67,
-    color: colors.lightGreen,
+    color: "#6AD755",
     font: typography.h2,
     textAlign: "left",
     value: (data: any) => data.number,
     transform: "number",
   },
   {
-    x: 712,
+    x: 680,
     y: 247,
     weight: 276,
-    color: colors.lightGreen,
+    color: "#6AD755",
     font: typography.h3,
     textAlign: "left",
-    value: "12/10/10 15h",
+
+    value: (data: any) => {
+      const dt: Date = data.datePublished || new Date();
+      const d = dt.getDate().toString().padStart(2, "0");
+      const m = (dt.getMonth() + 1).toString().padStart(2, "0");
+      const y = dt.getFullYear();
+      const h = dt.getHours().toString().padStart(2, "0");
+      let str = `${d}/${m}/${y} - ${h}h`;
+      return str;
+    },
   },
   //
   // vacinados
@@ -64,7 +73,7 @@ const _fields = [
     x: 238,
     y: 342,
     weight: 208,
-    color: colors.lightGreen,
+    color: "colors.lightGreen",
     font: typography.h2,
     textAlign: "right",
     value: (data: any) => data.vacinados,
@@ -119,7 +128,17 @@ const _fields = [
     color: colors.blue,
     font: typography.h1,
     textAlign: "right",
-    value: (data: any) => data.vacinados,
+    value: ({ casos: { confirmados, suspeitos, descartados } }: any) =>
+      confirmados.recuperados +
+      confirmados.obitos +
+      confirmados.ativos.isolamento +
+      confirmados.ativos.ala +
+      +confirmados.ativos.uti +
+      (suspeitos.isolamento +
+        suspeitos.ala +
+        suspeitos.uti +
+        +suspeitos.obitos) +
+      (descartados.exame + descartados.alta + descartados.sars),
     transform: "number",
   },
   //

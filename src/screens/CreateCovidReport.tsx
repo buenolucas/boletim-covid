@@ -301,12 +301,11 @@ const CreateCovidReport = () => {
           if (field.transform === "number") {
             v = v.toLocaleString("pt-br", {
               useGrouping: true,
-              minimumIntegerDigits: 3,
+              minimumIntegerDigits: 2,
             });
           }
         }
         field.value = v;
-
         return field;
       }
     });

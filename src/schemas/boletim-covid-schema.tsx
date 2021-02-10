@@ -21,16 +21,17 @@ const schema = new SimpleSchema(
       type: SimpleSchema.Integer,
     },
     "casos.confirmados.ativos": { label: "Casos Ativos", type: Object },
-    "casos.confirmados.ativos.isolamento": {
-      label: "Isolamento Domicioliar",
-      type: SimpleSchema.Integer,
-    },
+
     "casos.confirmados.ativos.ala": {
       label: "Internados em Ala",
       type: SimpleSchema.Integer,
     },
     "casos.confirmados.ativos.uti": {
       label: "Internados em UTI",
+      type: SimpleSchema.Integer,
+    },
+    "casos.confirmados.ativos.isolamento": {
+      label: "Isolamento Domiciliar",
       type: SimpleSchema.Integer,
     },
     "casos.confirmados.obitos": { type: SimpleSchema.Integer },
@@ -57,12 +58,12 @@ const schema = new SimpleSchema(
       label: "Descartados por exame LAboratorial",
       type: SimpleSchema.Integer,
     },
-    "casos.descartados.alta": {
-      label: "Alta - Síndrome Gripal",
-      type: SimpleSchema.Integer,
-    },
     "casos.descartados.sars": {
       label: "Sìndrome Respiratória Aguda Grave",
+      type: SimpleSchema.Integer,
+    },
+    "casos.descartados.alta": {
+      label: "Alta - Síndrome Gripal",
       type: SimpleSchema.Integer,
     },
     vacinados: {

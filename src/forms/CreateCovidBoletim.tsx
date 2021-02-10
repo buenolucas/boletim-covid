@@ -71,7 +71,13 @@ export function CreateCovidBoletim() {
         <Card style={cardStyle(red.primary)}>
           <Title level={4}>Casos Confirmados</Title>
           <AutoField name="casos.confirmados.recuperados" {...fieldProps} />
-          <AutoField name="casos.confirmados.ativos" {...fieldProps} />
+
+          <AutoField name="casos.confirmados.ativos.ala" {...fieldProps} />
+          <AutoField name="casos.confirmados.ativos.uti" {...fieldProps} />
+          <AutoField
+            name="casos.confirmados.ativos.isolamento"
+            {...fieldProps}
+          />
           <AutoField name="casos.confirmados.obitos" {...fieldProps} />
         </Card>
 
@@ -86,8 +92,8 @@ export function CreateCovidBoletim() {
         <Card style={cardStyle(green.primary)}>
           <Title level={4}>Investigação Concluída</Title>
           <AutoField name="casos.descartados.exame" {...fieldProps} />
-          <AutoField name="casos.descartados.alta" {...fieldProps} />
           <AutoField name="casos.descartados.sars" {...fieldProps} />
+          <AutoField name="casos.descartados.alta" {...fieldProps} />
         </Card>
 
         <Card style={cardStyle(purple.primary)}>

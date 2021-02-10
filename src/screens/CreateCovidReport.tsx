@@ -341,17 +341,18 @@ const CreateCovidReport = () => {
     }
   };
   return (
-    <div>
-      <div className="container-sm steps">
-        <Steps current={current}>
-          {steps.map((item) => (
-            <Step key={item.title} title={item.title} />
-          ))}
-        </Steps>
+    <>
+      <div className="main-area">
+        <div className="container-sm steps">
+          <Steps current={current}>
+            {steps.map((item, index) => (
+              <Step key={index} />
+            ))}
+          </Steps>
+        </div>
+
+        {renderContent()}
       </div>
-
-      {renderContent()}
-
       <Card style={{}}>
         <Row>
           <Col span={12}>
@@ -393,7 +394,7 @@ const CreateCovidReport = () => {
           </Col>
         </Row>
       </Card>
-    </div>
+    </>
   );
 };
 

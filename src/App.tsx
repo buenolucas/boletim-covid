@@ -8,9 +8,8 @@ const { Header, Footer, Sider, Content } = Layout;
 function App() {
   return (
     <Layout>
-      <Header>covid-19 gv</Header>
       <Content>
-        <div className="site">
+        <div className="app">
           <CreateCovidReport />
         </div>
       </Content>

@@ -1,3 +1,4 @@
+import { Card } from "antd";
 import React, { useRef, useEffect } from "react";
 //import "./canvasPolifyll.js";
 
@@ -48,7 +49,21 @@ const BoletimPreview = (props: BoletimPreviewProps) => {
     ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
   }, []);
 
-  return <canvas ref={canvasRef} {...props} width={984} height={1280} />;
+  return (
+    <Card
+      className="report-preview"
+      bodyStyle={{ display: "none" }}
+      cover={
+        <canvas
+          ref={canvasRef}
+          {...props}
+          width={984}
+          height={1280}
+          style={{ width: "100%" }}
+        />
+      }
+    ></Card>
+  );
 };
 
 export default BoletimPreview;

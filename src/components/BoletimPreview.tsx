@@ -34,12 +34,12 @@ const BoletimPreview = (props: BoletimPreviewProps) => {
         ctx.lineWidth = 2;
         ctx.fillText(
           label.value,
-          label.textAlign === "right" ? label.x + label.weight : label.x,
+          label.textAlign === "right" ? label.x + label.width : label.x,
           label.y
         );
         ctx.strokeText(
           label.value,
-          label.textAlign === "right" ? label.x + label.weight : label.x,
+          label.textAlign === "right" ? label.x + label.width : label.x,
           label.y
         );
       });

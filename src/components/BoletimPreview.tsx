@@ -1,12 +1,13 @@
-import { Card } from "antd";
+import { Button, Card } from "antd";
 import React, { useRef, useEffect } from "react";
+import { DownloadOutlined } from "@ant-design/icons";
 //import "./canvasPolifyll.js";
 
 type BoletimPreviewProps = {
-  fields: Array<object>;
+  fields: Array<any>;
 };
 const BoletimPreview = (props: BoletimPreviewProps) => {
-  const canvasRef = useRef(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
   const { fields } = props;
 
   //984 1280
@@ -42,17 +43,21 @@ const BoletimPreview = (props: BoletimPreviewProps) => {
           label.y
         );
       });
-
-      // ctx.fillText("129", 249, 715);
     };
 
     ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
   }, []);
 
+  const donwloadBoletim = () => {
+    var link = document.createElement("a");
+    link.download = `gv-boletim-covid-${fields[0].value}.png`;
+    link.href = canvasRef?.current?.toDataURL() || "http://";
+    link.click();
+  };
   return (
     <Card
       className="report-preview"
-      bodyStyle={{ display: "none" }}
+      bodyStyle={{ textAlign: "center" }}
       cover={
         <canvas
           ref={canvasRef}
@@ -62,7 +67,16 @@ const BoletimPreview = (props: BoletimPreviewProps) => {
           style={{ width: "100%" }}
         />
       }
-    ></Card>
+    >
+      <Button
+        type="primary"
+        icon={<DownloadOutlined />}
+        size="large"
+        onClick={donwloadBoletim}
+      >
+        Download
+      </Button>
+    </Card>
   );
 };
 

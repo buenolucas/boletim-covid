@@ -48,6 +48,7 @@ export function CovidBoletimInsertData(props: any) {
         direction="vertical"
         style={{ display: "flex", marginTop: 20, marginBottom: 20 }}
       >
+        {/* 
         <Card style={cardStyle(red.primary)}>
           <Title level={4}>Casos Confirmados</Title>
           <AutoField name="casos.confirmados.recuperados" {...fieldProps} />
@@ -74,6 +75,7 @@ export function CovidBoletimInsertData(props: any) {
           <Title level={4}>Vacinados</Title>
           <AutoField name="vacinados" {...fieldProps} />
         </Card>
+        */}
       </Space>
     </AutoForm>
   );

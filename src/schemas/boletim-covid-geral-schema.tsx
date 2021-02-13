@@ -7,7 +7,7 @@ const schema = new SimpleSchema(
   {
     number: {
       type: SimpleSchema.Integer,
-      label: "Número do Boletim",
+      label: "Número do  Boletim",
       min: 1,
     },
     datePublished: {

@@ -30,9 +30,9 @@ const colors = {
 };
 const typography = {
   h1: "110px GothamBold",
-  h2: "72px GothamBold",
+  h2: "84px GothamBold",
   h3: "42px GothamBold",
-  h4: "32px GothamBold",
+  h4: "26px GothamBold",
 };
 const _fields = [
   //
@@ -40,7 +40,7 @@ const _fields = [
   //
   {
     x: 588,
-    y: 289,
+    y: 291,
     width: 251,
     color: "#6AD755",
     font: typography.h4,
@@ -61,7 +61,7 @@ const _fields = [
   //
   {
     x: 595,
-    y: 339,
+    y: 341,
     width: 221,
     color: colors.lightGreen,
     font: typography.h4,
@@ -97,7 +97,7 @@ const _fields = [
 
   {
     x: 382,
-    y: 599,
+    y: 595,
     width: 140,
     color: colors.red,
     font: typography.h2,

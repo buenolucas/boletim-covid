@@ -16,7 +16,7 @@ const schema = new SimpleSchema(
       defaultValue: new Date(),
     },
     nivel: {
-      type: SimpleSchema.Integer,
+      type: String,
       label: "Nível de Alerta",
     },
     internados_sus_gv: {

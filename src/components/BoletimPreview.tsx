@@ -20,7 +20,7 @@ const BoletimPreview = (props: BoletimPreviewProps) => {
     const ctx = canvas.getContext("2d");
     ctx.fillStyle = "#e4e4e4";
     const img = new Image();
-    img.src = "/boletim-gv-gabarito.jpg";
+    img.src = "/boletim-gv-leitos-gabarito.jpg";
     img.onload = function () {
       ctx.drawImage(img, 0, 0);
 

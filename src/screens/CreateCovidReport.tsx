@@ -22,37 +22,28 @@ const steps = [
 ];
 
 const colors = {
-  green: "#0D973B",
-  lightGreen: "#77F767",
+  green: "#27A70A",
+  lightGreen: "#4BDF31",
   orange: "#ED8F3B",
   blue: "#06359D",
   red: "#F10909",
 };
 const typography = {
-  h1: "58px GothamBold",
-  h2: "42px GothamBold",
-  h3: "32px GothamBold",
+  h1: "110px GothamBold",
+  h2: "72px GothamBold",
+  h3: "42px GothamBold",
+  h4: "32px GothamBold",
 };
 const _fields = [
   //
   // geral
   //
   {
-    x: 810,
-    y: 193,
-    width: 67,
-    color: "#6AD755",
-    font: typography.h2,
-    textAlign: "left",
-    value: (data: any) => data.number,
-    transform: "number",
-  },
-  {
-    x: 583,
-    y: 247,
+    x: 588,
+    y: 289,
     width: 251,
     color: "#6AD755",
-    font: typography.h3,
+    font: typography.h4,
     textAlign: "left",
 
     value: (data: any) => {
@@ -66,218 +57,80 @@ const _fields = [
     },
   },
   //
-  // vacinados
+  // nivel
   //
   {
-    x: 238,
-    y: 342,
-    width: 208,
-    color: "colors.lightGreen",
+    x: 595,
+    y: 339,
+    width: 221,
+    color: colors.lightGreen,
+    font: typography.h4,
+    textAlign: "left",
+    value: (data: any) => data.nivel,
+    transform: "number",
+  },
+
+  //
+  // ocupacao
+  //
+  {
+    x: 586,
+    y: 590,
+    width: 56,
+    color: colors.red,
+    font: typography.h3,
+    textAlign: "right",
+    value: (data: any) => data.internados_sus_gv,
+    transform: "number",
+  },
+
+  {
+    x: 586,
+    y: 650,
+    width: 56,
+    color: colors.red,
+    font: typography.h3,
+    textAlign: "right",
+    value: (data: any) => data.internados_sus_other,
+    transform: "number",
+  },
+
+  {
+    x: 382,
+    y: 599,
+    width: 140,
+    color: colors.red,
     font: typography.h2,
     textAlign: "right",
-    value: (data: any) => data.vacinados,
-    transform: "number",
-  },
-  //
-  //
-  //
-  {
-    x: 238,
-    y: 471,
-    width: 208,
-    color: "#FFFFFF",
-    font: typography.h1,
-    textAlign: "right",
-    value: ({ casos: { confirmados } }: any) =>
-      confirmados.recuperados +
-      confirmados.obitos +
-      confirmados.ativos.isolamento +
-      confirmados.ativos.ala +
-      +confirmados.ativos.uti,
-    transform: "number",
-  },
-  {
-    x: 238,
-    y: 596,
-    width: 208,
-    color: colors.orange,
-    font: typography.h1,
-    textAlign: "right",
-    value: ({ casos: { suspeitos } }: any) =>
-      suspeitos.isolamento + suspeitos.ala + suspeitos.uti + +suspeitos.obitos,
-    transform: "number",
-  },
-  {
-    x: 238,
-    y: 715,
-    width: 208,
-    color: colors.green,
-    font: typography.h1,
-    textAlign: "right",
-    value: ({ casos: { descartados } }: any) =>
-      descartados.exame + descartados.alta + descartados.sars,
-    transform: "number",
-  },
-  {
-    id: "",
-    x: 238,
-    y: 834,
-    width: 208,
-    color: colors.blue,
-    font: typography.h1,
-    textAlign: "right",
-    value: ({ casos: { confirmados, suspeitos, descartados } }: any) =>
-      confirmados.recuperados +
-      confirmados.obitos +
-      confirmados.ativos.isolamento +
-      confirmados.ativos.ala +
-      +confirmados.ativos.uti +
-      (suspeitos.isolamento +
-        suspeitos.ala +
-        suspeitos.uti +
-        +suspeitos.obitos) +
-      (descartados.exame + descartados.alta + descartados.sars),
-    transform: "number",
-  },
-  //
-  // recuperados
-  //
-  {
-    x: 810,
-    y: 340,
-    width: 105,
-    color: "#FFFFFF",
-    font: typography.h3,
-    textAlign: "right",
-    value: (data: any) => data.casos.confirmados.recuperados,
-    transform: "number",
-  },
-  {
-    id: "casos.confirmados.ala",
-    x: 810,
-    y: 392,
-    width: 105,
-    color: colors.red,
-    font: typography.h3,
-    textAlign: "right",
-    value: (data: any) => data.casos.confirmados.ativos.ala,
-    transform: "number",
-  },
-  {
-    id: "casos.confirmados.uti",
-    x: 810,
-    y: 450,
-    width: 105,
-    color: colors.red,
-    font: typography.h3,
-    textAlign: "right",
-    value: (data: any) => data.casos.confirmados.ativos.uti,
-    transform: "number",
-  },
-  {
-    id: "casos.confirmados.domicilio  ",
-    x: 810,
-    y: 500,
-    width: 105,
-    color: colors.red,
-    font: typography.h3,
-    textAlign: "right",
-    value: (data: any) => data.casos.confirmados.ativos.isolamento,
-    transform: "number",
-  },
-  {
-    id: "casos.confirmados.obitos",
-    x: 810,
-    y: 550,
-    width: 105,
-    color: colors.red,
-    font: typography.h3,
-    textAlign: "right",
-    value: (data: any) => data.casos.confirmados.obitos,
+    value: (data: any) => data.internados_sus_other + data.internados_sus_gv,
     transform: "number",
   },
 
-  //
-  // suspeitos
-  //
   {
-    x: 810,
-    y: 663,
-    width: 105,
-    color: colors.orange,
-    font: typography.h3,
+    x: 331,
+    y: 786,
+    width: 231,
+    color: colors.green,
+    font: typography.h1,
     textAlign: "right",
-    value: (data: any) => data.casos.suspeitos.isolamento,
-    transform: "number",
+    value: (data: any) => data.factor_sus,
+    transform: "percent",
   },
+
   {
-    x: 810,
-    y: 723,
-    width: 105,
+    x: 455,
+    y: 940,
+    width: 231,
     color: colors.orange,
-    font: typography.h3,
-    textAlign: "right",
-    value: (data: any) => data.casos.suspeitos.ala,
-    transform: "number",
-  },
-  {
-    x: 810,
-    y: 773,
-    width: 105,
-    color: colors.orange,
-    font: typography.h3,
-    textAlign: "right",
-    value: (data: any) => data.casos.suspeitos.uti,
-    transform: "number",
-  },
-  {
-    id: "casos.suspeitos.domicilio",
-    x: 810,
-    y: 827,
-    width: 105,
-    color: colors.orange,
-    font: typography.h3,
-    textAlign: "right",
-    value: (data: any) => data.casos.suspeitos.obitos,
-    transform: "number",
+    font: typography.h1,
+    textAlign: "left",
+    value: (data: any) => data.factor_other,
+    transform: "percent",
   },
 
   //
-  // descartados
   //
-  {
-    id: "casos.descartados.exame",
-    x: 810,
-    y: 949,
-    width: 105,
-    color: colors.green,
-    font: typography.h3,
-    textAlign: "right",
-    value: (data: any) => data.casos.descartados.exame,
-    transform: "number",
-  },
-  {
-    id: "casos.descartados.sars",
-    x: 810,
-    y: 1021,
-    width: 105,
-    color: colors.green,
-    font: typography.h3,
-    textAlign: "right",
-    value: (data: any) => data.casos.descartados.sars,
-    transform: "number",
-  },
-  {
-    id: "casos.descartados.alta",
-    x: 810,
-    y: 1087,
-    width: 105,
-    color: colors.green,
-    font: typography.h3,
-    textAlign: "right",
-    value: (data: any) => data.casos.descartados.alta,
-    transform: "number",
-  },
+  //
 ];
 
 const CreateCovidReport = () => {
@@ -303,6 +156,12 @@ const CreateCovidReport = () => {
               useGrouping: true,
               minimumIntegerDigits: 2,
             });
+          } else if (field.transform === "percent") {
+            v =
+              v.toLocaleString("pt-br", {
+                useGrouping: true,
+                minimumIntegerDigits: 2,
+              }) + "%";
           }
         }
         field.value = v;

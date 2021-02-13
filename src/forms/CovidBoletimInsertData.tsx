@@ -48,6 +48,17 @@ export function CovidBoletimInsertData(props: any) {
         direction="vertical"
         style={{ display: "flex", marginTop: 20, marginBottom: 20 }}
       >
+        <Card style={cardStyle(blue.primary)}>
+          <Title level={4}>Protocolo Sanitário GV</Title>
+          <AutoField name="nivel" {...fieldProps} />
+        </Card>
+        <Card style={cardStyle(red.primary)}>
+          <Title level={4}>Nível de Ocupação de Leitos</Title>
+          <AutoField name="internados_sus_gv" {...fieldProps} />
+          <AutoField name="internados_sus_other" {...fieldProps} />
+          <AutoField name="factor_sus" {...fieldProps} />
+          <AutoField name="factor_other" {...fieldProps} />
+        </Card>
         {/* 
         <Card style={cardStyle(red.primary)}>
           <Title level={4}>Casos Confirmados</Title>

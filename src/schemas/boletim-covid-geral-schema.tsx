@@ -15,6 +15,11 @@ const schema = new SimpleSchema(
       label: "Data de Publicação",
       defaultValue: new Date(),
     },
+    nivel: {
+      type: Date,
+      label: "Data de Publicação",
+      defaultValue: "string",
+    },
   },
   {
     requiredByDefault: true,
